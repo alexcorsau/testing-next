@@ -8,7 +8,11 @@ interface Human {
   hair_color?: string;
 }
 
-const fetcher = (...args: any[]) => fetch(...args).then((res) => res.json());
+const fetcher = (...args: any[]) => {
+  const newArgs = { ...args } as any;
+  const resp = fetch(newArgs).then((res) => res.json());
+  return resp;
+};
 
 const Swapi = () => {
   const [swapiResponse, setSwapiResponse] = useState<Human[]>([]);

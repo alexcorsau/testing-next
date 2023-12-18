@@ -1,7 +1,6 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import { AppBar } from "@/components/AppBar/AppBar";
-import Swapi from "./swapi";
 import {
   SpreedlyTokenisationComponent,
   TokenisationCompomentResponse,
@@ -18,7 +17,6 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <AppBar title={"App Bar"} />
-        <Swapi />
         <SpreedlyTokenisationComponent
           spreedlyEnv="prod"
           onReturnSpreedlyResponse={(data) => console.log("THIS IS IT: ", data)}
